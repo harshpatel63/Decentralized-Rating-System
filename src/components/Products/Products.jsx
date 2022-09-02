@@ -15,42 +15,45 @@ function Products() {
         },
     ]);
     return (
-        <section className="products">
-            <h1 className="products__main-title">
-                <b>Products 🛍️ </b>
-            </h1>
-            <div className="products__products-container">
-                {products.map((eachproduct) => {
-                    console.log(eachproduct);
-                    return (
-                        <Link
-                            key={eachproduct.PID}
-                            to={"/product/" + eachproduct.PID}
-                        >
-                            <div className="products__products-container__card card">
-                                <img
-                                    src={eachproduct.ImageURL}
-                                    className="card-img-top"
-                                    alt={eachproduct.Name}
-                                />
-                                <div className="products__products-container__card__card-body card-body">
-                                    <h5>{eachproduct.Name}</h5>
-                                    <h6>
-                                        <b>Price:</b> {eachproduct.Price} MATIC{" "}
-                                    </h6>
-                                    <p className="products__products-container__card__card-text card-text">
-                                        {eachproduct.Details}
-                                    </p>
-                                    <button className="btn btn-primary">
-                                        View Details
-                                    </button>
+        <div className="products-wrapper">
+            <section className="products">
+                <h1 className="products__main-title">
+                    <b>Products 🛍️ </b>
+                </h1>
+                <div className="products__products-container">
+                    {products.map((eachproduct) => {
+                        console.log(eachproduct);
+                        return (
+                            <Link
+                                key={eachproduct.PID}
+                                to={"/product/" + eachproduct.PID}
+                            >
+                                <div className="products__products-container__card card">
+                                    <img
+                                        src={eachproduct.ImageURL}
+                                        className="card-img-top"
+                                        alt={eachproduct.Name}
+                                    />
+                                    <div className="products__products-container__card__card-body card-body">
+                                        <h5>{eachproduct.Name}</h5>
+                                        <h6>
+                                            <b>Price:</b> {eachproduct.Price}{" "}
+                                            MATIC{" "}
+                                        </h6>
+                                        <p className="products__products-container__card__card-text card-text">
+                                            {eachproduct.Details}
+                                        </p>
+                                        <button className="btn btn-primary">
+                                            View Details
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
-        </section>
+                            </Link>
+                        );
+                    })}
+                </div>
+            </section>
+        </div>
     );
 }
 
