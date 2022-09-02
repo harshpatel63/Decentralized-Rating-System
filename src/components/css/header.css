@@ -3,30 +3,39 @@
     width: 100%;
     opacity: 0.9;
     z-index: 10;
-  }
-  .dummy-head {
+}
+.dummy-head {
     width: 100%;
     height: 50px;
-  }
-  .header__brand__img {
+}
+.header__brand__img {
     height: 50px;
     margin: 5px 20px;
-  }
+}
 
-  .navbar-brand{
+.header-wrapper {
+    display: flex;
+    background-color: #f8f9fa;
+    justify-content: center;
+}
+.navbar {
+    width: 100%;
+    max-width: 1200px;
+}
+.navbar-brand {
     color: black;
     font-size: medium;
     letter-spacing: 0.05rem;
     font-weight: 500;
-  }
-  
-#navbarNavDropdown{
+}
+
+#navbarNavDropdown {
     display: flex;
     align-items: center;
     justify-content: right;
 }
 
-#navbarNavDropdown li a{
+#navbarNavDropdown li a {
     color: black;
     font-size: medium;
     letter-spacing: 0.05rem;

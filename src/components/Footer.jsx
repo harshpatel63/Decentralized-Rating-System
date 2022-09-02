@@ -6,7 +6,7 @@ function Footer() {
         <footer className="footer">
             <div className="footer__container container">
                 <div className="footer__row row">
-                    <div className="col-sm-3">
+                    <div className="col-sm-3 about-div">
                         <h4 className="title">Meta Basket</h4>
                         <p>
                             Meta Basket is an online store which has a

@@ -15,6 +15,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.footer .about-div{
+    text-align: left;
+}
+
+.footer .payment-div{
+    text-align: right;
+}
+
 .footer .payment {
     margin: 0px;
     padding: 0px;
@@ -51,6 +60,12 @@
 .payment-div {
     width: 25%;
 }
+
+.footer .text-center{
+    display: flex;
+    justify-content: center;
+}
+
 @media screen and (max-width: 1054px) {
     .payment-div {
         width: 50%;
