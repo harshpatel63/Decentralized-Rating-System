@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./components/Products/Products";
 import ProductsPage from "./components/Products/ProductsPage";
+import Home from "./Home";
 
 let productsList = [];
 
@@ -13,13 +14,12 @@ function App() {
             <div className="App">
                 <Header />
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/products" element={<Products />} />
                     <Route
                         path="/product/:id"
-                        // children={}
-                    >
-                        {/* <ProductsPage productsList={productsList} /> */}
-                    </Route>
+                        element={<ProductsPage productsList={productsList} />}
+                    />
                 </Routes>
 
                 <Footer />

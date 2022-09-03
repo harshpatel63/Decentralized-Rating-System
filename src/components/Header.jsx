@@ -6,12 +6,16 @@ import { useState } from "react";
 
 function Header() {
     let [isvisible, setisvisible] = useState(false);
-    let navlist = ["Home", "Products", "About"];
+    let navlist = [
+        { name: "Home", link: "" },
+        { name: "Products", link: "products" },
+        { name: "About", link: "about" },
+    ];
     return (
         <>
             <div className="header-wrapper">
-                <nav class="navbar navbar-expand-lg bg-light">
-                    <div class="container-fluid">
+                <nav className="navbar navbar-expand-lg bg-light">
+                    <div className="container-fluid">
                         <Link className="navbar-brand" to="/">
                             <img
                                 src={meta_basket_logo}
@@ -21,7 +25,7 @@ function Header() {
                             Meta Basket
                         </Link>
                         <button
-                            class="navbar-toggler"
+                            className="navbar-toggler"
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target="#navbarNavAltMarkup"
@@ -30,7 +34,7 @@ function Header() {
                             aria-label="Toggle navigation"
                             onClick={() => setisvisible(!isvisible)}
                         >
-                            <span class="navbar-toggler-icon"></span>
+                            <span className="navbar-toggler-icon"></span>
                         </button>
                         <div
                             className={
@@ -39,17 +43,18 @@ function Header() {
                             }
                             id="bs-example-navbar-collapse-1"
                         >
-                            <ul class="navbar-nav nav_links">
+                            <ul className="navbar-nav nav_links">
                                 {navlist.map((ele) => (
                                     <li
-                                        class="nav-item"
+                                        key={ele.name}
+                                        className="nav-item"
                                         onClick={auto_closenavbar_on_mobile}
                                     >
                                         <Link
-                                            class="nav-link"
-                                            to={"/" + ele.toLocaleLowerCase()}
+                                            className="nav-link"
+                                            to={"/" + ele.link}
                                         >
-                                            {ele}
+                                            {ele.name}
                                         </Link>
                                     </li>
                                 ))}
