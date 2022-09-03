@@ -9,26 +9,22 @@ let productsList = [];
 
 function App() {
     return (
-        <div className="App">
-            <Router>
+        <Router>
+            <div className="App">
                 <Header />
                 <Routes>
-                    <Route path="/" element={<Products />} />
+                    <Route path="/products" element={<Products />} />
                     <Route
                         path="/product/:id"
-                        exact
-                        element={(props) => (
-                            <ProductsPage
-                                {...props}
-                                productsList={productsList}
-                            />
-                        )}
-                    />
+                        // children={}
+                    >
+                        {/* <ProductsPage productsList={productsList} /> */}
+                    </Route>
                 </Routes>
-            </Router>
 
-            <Footer />
-        </div>
+                <Footer />
+            </div>
+        </Router>
     );
 }
 

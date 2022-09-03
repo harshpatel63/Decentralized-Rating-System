@@ -2,8 +2,11 @@ import React from "react";
 import "./css/header.css";
 import meta_basket_logo from "../assets/meta-basket-icon.png";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Header() {
+    let [isvisible, setisvisible] = useState(false);
+    let navlist = ["Home", "Products", "About"];
     return (
         <>
             <div className="header-wrapper">
@@ -21,37 +24,35 @@ function Header() {
                             class="navbar-toggler"
                             type="button"
                             data-bs-toggle="collapse"
-                            data-bs-target="#navbarNavDropdown"
-                            aria-controls="navbarNavDropdown"
+                            data-bs-target="#navbarNavAltMarkup"
+                            aria-controls="navbarNavAltMarkup"
                             aria-expanded="false"
                             aria-label="Toggle navigation"
+                            onClick={() => setisvisible(!isvisible)}
                         >
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div
-                            class="collapse navbar-collapse"
-                            id="navbarNavDropdown"
+                            className={
+                                (isvisible ? "" : "collapse") +
+                                " navbar-collapse"
+                            }
+                            id="bs-example-navbar-collapse-1"
                         >
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a
-                                        class="nav-link"
-                                        aria-current="page"
-                                        href="#"
+                            <ul class="navbar-nav nav_links">
+                                {navlist.map((ele) => (
+                                    <li
+                                        class="nav-item"
+                                        onClick={auto_closenavbar_on_mobile}
                                     >
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        Products
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">
-                                        About
-                                    </a>
-                                </li>
+                                        <Link
+                                            class="nav-link"
+                                            to={"/" + ele.toLocaleLowerCase()}
+                                        >
+                                            {ele}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -61,6 +62,12 @@ function Header() {
             <div className="dummy-head"></div>
         </>
     );
+    /*
+     * For auto closing navbar on click
+     */
+    function auto_closenavbar_on_mobile() {
+        setisvisible(false);
+    }
 }
 
 export default Header;

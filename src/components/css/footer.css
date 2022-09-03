@@ -20,9 +20,12 @@
     text-align: left;
 }
 
-.footer .payment-div{
-    text-align: right;
+.footer .payment-div .title, p{
+    display: flex;
+    justify-content: left;
 }
+
+
 
 .footer .payment {
     margin: 0px;

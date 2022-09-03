@@ -29,13 +29,17 @@
     font-weight: 500;
 }
 
-#navbarNavDropdown {
-    display: flex;
+
+
+/* #navbarNavAltMarkup {
     align-items: center;
+    justify-content: right;
+} */
+.navbar-collapse{
     justify-content: right;
 }
 
-#navbarNavDropdown li a {
+.nav_links a{
     color: black;
     font-size: medium;
     letter-spacing: 0.05rem;
