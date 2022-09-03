@@ -13,7 +13,7 @@ function Header() {
     ];
     return (
         <>
-            <div className="header-wrapper">
+            <div className="header header-wrapper">
                 <nav className="navbar navbar-expand-lg bg-light">
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">
