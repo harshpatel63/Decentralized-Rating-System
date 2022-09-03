@@ -1,4 +1,4 @@
-export const ratingAddress = "0x30f839599dDc8c986A1a2E085700BAEC59B9e6d2";
+export const ratingAddress = "0x10CAd24F009d41F5FfDf2d9F32Fc71636f83Fd25";
 
 export const ratingAbi = [
 	{
@@ -154,6 +154,11 @@ export const ratingAbi = [
 						"internalType": "struct RatingContract.Rating[]",
 						"name": "reviewList",
 						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct RatingContract.Hospital",
@@ -231,6 +236,11 @@ export const ratingAbi = [
 						"internalType": "struct RatingContract.Rating[]",
 						"name": "reviewList",
 						"type": "tuple[]"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct RatingContract.Hospital[]",

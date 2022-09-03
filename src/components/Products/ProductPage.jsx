@@ -1,37 +1,63 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/ProductPage.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
 import ReviewFetch from "./ReviewFetch";
 import CreateRating from "./CreateRating";
 
 function ProductPage() {
-    let [reviewFetched, setreviewFetched] = useState(true);
-    let state = {
-        currentproduct: {
-            PID: "1",
-            ImageURL: "https://picsum.photos/200/300",
-            Name: "Abcd",
-            Price: "0.456",
-            Details:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-        },
-        points: 0,
-        count: 1,
-    };
-    /*
-    //Loading spinner
+    let { id } = useParams();
+    let [reviewFetched, setreviewFetched] = useState(false);
+    let [currenthospital, setcurrhospital] = useState({
+        name: "",
+        place: "",
+        state: "",
+        specialization: "",
+        imageHash: "",
+        points: "",
+        counts: "",
+        reviewList: "",
+    });
 
-    if (state.currentproduct === undefined)
-        return (
-            <div className="productdetail__loader">
-                <h1>Loading...</h1>{" "}
-                <div className="spinner-border" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        );
-    */
+    /* ------------------------------- Just blockchain things ------------------------------- */
+    useEffect(() => {
+        setTimeout(() => {
+            halwa();
+        }, 2000);
+    }, []);
+    async function halwa() {
+        const count = await window.ratingContract.methods
+            .getHospital(id)
+            .call();
+        let name = count[0];
+        let place = count[1];
+        let state = count[2];
+        let specialization = count[3];
+        // let imageHash = count[4];
+        let imageHash = "https://picsum.photos/200/200";
+        let points = count[5];
+        let counts = count[6];
+        let reviewList = count[7];
+        let hospital_id = count[8];
+        setcurrhospital({
+            //data
+            name,
+            place,
+            state,
+            specialization,
+            imageHash,
+
+            // for reviews
+            points,
+            counts,
+            reviewList,
+            id: hospital_id,
+        });
+        setreviewFetched(true);
+        console.log(count);
+    }
+    /*---------------------------------------------------------------------------------------*/
+
     return (
         <>
             <Link to="/">
@@ -42,18 +68,21 @@ function ProductPage() {
             <section className="productdetail__product-detail-area">
                 <div className="productdetail__product-detail-area__container">
                     <div className="productdetail__product-detail-area__container__image">
-                        <img src={state.currentproduct.ImageURL} alt="" />
+                        <img src={currenthospital.imageHash} alt="" />
                     </div>
                     <div className="productdetail__product-detail-area__container__products-text">
                         <div className="productdetail__product-detail-area__container__products-text__text">
-                            <h3>{state.currentproduct.Name}</h3>
-                            <h2>{state.currentproduct.Price} MATIC</h2>
-                            <p>{state.currentproduct.Details}</p>
+                            <h2>
+                                {currenthospital.name}, {currenthospital.place},{" "}
+                                {currenthospital.state}
+                            </h2>
+                            <h3>
+                                Specialization: {currenthospital.specialization}
+                            </h3>
                         </div>
                         <div className="productdetail__product-detail-area__container__products-text__buy-btn">
                             <button className="btn btn-warning buy-button">
-                                <i className="fa-solid fa-cart-shopping"></i>{" "}
-                                Buy with Meta Mask
+                                <i class="fa-solid fa-eye"></i> See Reviews
                             </button>
                         </div>
                     </div>
@@ -67,21 +96,21 @@ function ProductPage() {
                                 <h5>Overall</h5>
                                 <h4>
                                     {reviewFetched === true
-                                        ? state.count == 0
+                                        ? currenthospital.counts == 0
                                             ? 0
                                             : (
-                                                  state.points / state.count
+                                                  currenthospital.points /
+                                                  currenthospital.counts
                                               ).toFixed(2)
                                         : LoadingSpinner(false)}
                                 </h4>
-                                <h6>({state.count} Reviews)</h6>
+                                <h6>({currenthospital.counts} Reviews)</h6>
                             </div>
                         </div>
-                        <ReviewFetch />
+                        <ReviewFetch reviewList={currenthospital.reviewList} />
                     </div>
                     <CreateRating />
                 </div>
-                lol
             </section>
         </>
     );

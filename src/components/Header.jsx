@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/header.css";
 import meta_basket_logo from "../assets/meta-basket-icon.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+import web3 from "../web3";
+import { ratingAbi, ratingAddress } from "../Rating";
 function Header() {
     let [isvisible, setisvisible] = useState(false);
     let navlist = [
@@ -11,6 +13,31 @@ function Header() {
         { name: "Products", link: "products" },
         { name: "About", link: "about" },
     ];
+
+    /* ------------------------------- Just blockchain things ------------------------------- */
+    useEffect(() => {
+        loadBlockchainData();
+        console.log("harshhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
+    }, []);
+
+    async function loadBlockchainData() {
+        let accounts;
+        try {
+            accounts = await web3.eth.getAccounts();
+        } catch (err) {
+            // this.state.ismetamaskavailable = false;
+            console.log("please install metamask");
+            return;
+        }
+
+        window.ratingContract = new web3.eth.Contract(ratingAbi, ratingAddress);
+        console.log(window.ratingContract);
+        const count = await window.ratingContract.methods.getCount(1).call();
+        const points = await window.ratingContract.methods.getPoints(1).call();
+        console.log(count, points);
+    }
+    /*---------------------------------------------------------------------------------------*/
+
     return (
         <>
             <div className="header header-wrapper">
