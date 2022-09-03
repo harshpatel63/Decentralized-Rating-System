@@ -100,6 +100,7 @@
 }
 .productdetail__product-review-area__container__content {
     display: flex;
+    flex-direction: column;
 }
 .productdetail__product-review-area__container__content__reviews {
     flex: 0.5;
