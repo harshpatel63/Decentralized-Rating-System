@@ -3,6 +3,7 @@ import "./css/ProductPage.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import ReviewFetch from "./ReviewFetch";
+import CreateRating from "./CreateRating";
 
 function ProductPage() {
     let [reviewFetched, setreviewFetched] = useState(true);
@@ -78,6 +79,7 @@ function ProductPage() {
                         </div>
                         <ReviewFetch />
                     </div>
+                    <CreateRating />
                 </div>
                 lol
             </section>
