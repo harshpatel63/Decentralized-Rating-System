@@ -2,46 +2,68 @@ pragma solidity ^0.8.16;
 
 contract RatingContract {
 
-    // For storing the ratings and reviews for each product
-    struct ProductReview {
+    uint hospitalCount = 0;
+
+    // For storing the ratings and reviews for each hospital
+    struct Hospital {
+        string name;
+        string place;
+        string state;
+        string[] specialization;
+        string imageHash;
         uint points;
         uint count;
         Rating[] reviewList;
     }
 
-    // maps the pId (product Id) to the ProductReview object corresponding to that product
-    // products are uniquely identified by pId (product ID)
-    mapping(uint => ProductReview) productReviewMap;
+    // maps the hId (Hospital Id) to the Hospital object
+    // hospital are uniquely identified by hId (hospital ID)
+    mapping(uint => Hospital) HospitalMap;
 
-    // For storing the user reviews for each product
+    // For storing the user reviews for each hospital
     struct Rating {
-        uint id;
-        string cId;
+        string name;
+        uint time;
         uint8 star;
         string review;
     }
 
-    // Returns the total points the product has received from users
-    function getPoints(uint pId) public view returns (uint) {
-        return productReviewMap[pId].points;
+    // Returns the total points the hospital has received from users
+    function getPoints(uint hId) public view returns (uint) {
+        return HospitalMap[hId].points;
     }
 
-    // Returns the total count of users who had rated the product
-    function getCount(uint pId) public view returns (uint) {
-        return productReviewMap[pId].count;
+    // Returns the total count of users who had rated the hospital
+    function getCount(uint hId) public view returns (uint) {
+        return HospitalMap[hId].count;
     }
 
-    // Returns the user reviews list for the product  
-    function getReviewList(uint pId) public view returns (Rating[] memory) {
-        return productReviewMap[pId].reviewList;
+    // Returns the user reviews list for the hospital
+    function getHospital(uint hId) public view returns (Hospital memory) {
+        return HospitalMap[hId];
     }
 
-    // Function for users to give rating for a product
-    function createRating(uint pId, string memory _cId, uint8 _star, string memory _review) public {
-        productReviewMap[pId].count+=1;
-        productReviewMap[pId].points+=_star;
-        productReviewMap[pId].reviewList.push(Rating(productReviewMap[pId].count, _cId, _star, _review));
+    function getHospitalList() public view returns (Hospital[] memory) {
+        Hospital[] memory ret = new Hospital[](hospitalCount);
+        for (uint i = 0; i <= hospitalCount; i++) {
+            ret[i] = HospitalMap[i];
+            }
+            return ret;
+    }
 
+    // Function for users to give rating for a hospital
+    function createRating(uint hId, string memory name, uint8 _star, string memory _review) public {
+        HospitalMap[hId].count+=1;
+        HospitalMap[hId].points+=_star;
+        HospitalMap[hId].reviewList.push(Rating(name,block.timestamp, _star, _review));
+    }
+
+    function createHospital(string memory name, string memory place, string memory state, string[] memory specialization) public {
+        hospitalCount++;
+        HospitalMap[hospitalCount].name = name;
+        HospitalMap[hospitalCount].place = place;
+        HospitalMap[hospitalCount].state = state;
+        HospitalMap[hospitalCount].specialization = specialization;
     }
 
 }
