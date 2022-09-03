@@ -1,0 +1,33 @@
+.dots{
+    border: 0;
+    border-top: 0.4rem dotted black;
+    margin: 1rem 45%;
+}
+
+.about_parent_container{
+    display: grid;
+    grid-template-columns: auto auto;
+    /* gap: 10px; */
+}
+
+.myself{
+    /* width: 50%; */
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 1rem;
+}
+
+
+.myself h1{
+    font-size: 2.5rem;    
+}
+
+.myself hr{
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.myself p{
+    font-size: 1.4rem;
+    line-height: 2rem;
+}

@@ -22,7 +22,7 @@ function Header() {
                                 alt="Meta Basket Logo"
                                 className="header__brand__img"
                             />
-                            Meta Basket
+                            Meta Health
                         </Link>
                         <button
                             className="navbar-toggler"

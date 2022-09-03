@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./components/Products/Products";
 import ProductPage from "./components/Products/ProductPage";
 import Home from "./Home";
+import About from "./About"
 
 let productsList = [];
 
@@ -20,6 +21,7 @@ function App() {
                         path="/product/:id"
                         element={<ProductPage productsList={productsList} />}
                     />
+                    <Route path="/about" element={<About />} />
                 </Routes>
 
                 <Footer />
