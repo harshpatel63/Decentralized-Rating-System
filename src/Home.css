@@ -16,8 +16,12 @@
     height: 100vh;
     max-height: 1000px;
     width: 100%;
-    background: url("./assets/home_background.jpg");
-    background-size: 100%;
+    background: url("./assets/home_bg.png") center center no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
 }
 .overlay {
     position: absolute;
@@ -43,4 +47,44 @@
     font-size: 3rem;
     font-weight: 900;
     color: ivory;
+}
+
+@media only screen and (max-width: 720px){
+
+
+    /* //////////////////// Home CSS ///////////////////// */
+
+    .parent_home_container {
+        height: 80vh;
+    }
+
+    #home h1{
+        font-size: 2.1rem;        
+        margin-top: 3rem;        
+    }
+    
+    #home h2{
+        margin: 0 1rem;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 380px){
+
+    #home h1{
+        font-size: 1.8rem;        
+        margin-top: 1rem;        
+    }
+    
+    #home h2{
+        margin: 0 1rem;
+        margin-top: 1rem;
+        margin-bottom: 3rem;
+        font-size: 1.5rem;
+    }
+
 }
