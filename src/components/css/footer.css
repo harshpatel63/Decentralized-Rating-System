@@ -16,16 +16,15 @@
     justify-content: space-between;
 }
 
-.footer .about-div{
+.footer .about-div {
     text-align: left;
 }
 
-.footer .payment-div .title, p{
+.footer .payment-div .title,
+p {
     display: flex;
     justify-content: left;
 }
-
-
 
 .footer .payment {
     margin: 0px;
@@ -40,7 +39,7 @@
     color: #fff;
     float: left;
     font-size: 25px;
-    padding: 10px 10px;
+    padding: 10px 0px;
 }
 .footer__buy_with_meta_mask {
     width: 240px;
@@ -64,7 +63,7 @@
     width: 25%;
 }
 
-.footer .text-center{
+.footer .text-center {
     display: flex;
     justify-content: center;
 }

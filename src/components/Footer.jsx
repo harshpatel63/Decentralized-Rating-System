@@ -15,11 +15,10 @@ function Footer() {
                     </div>
 
                     <div className="col-sm-3 payment-div">
-                        <h4 className="title">Payment Methods</h4>
-                        <p>you can pay with Meta Mask</p>
+                        <h4 className="title">Integrated with</h4>
                         <ul className="payment">
                             <li>
-                                <a href="#">
+                                <a href="https://metamask.io/" target="_blank">
                                     <div className="footer__buy_with_meta_mask">
                                         <img src={buy_with_meta_mask} alt="" />
                                     </div>
