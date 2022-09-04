@@ -49,6 +49,32 @@
     color: ivory;
 }
 
+.home_info{
+    color: black ;
+}
+
+.home_info p{
+    margin: 2.5rem 3rem;
+    font-size: 1.8rem;
+    text-align: left;   
+}
+
+
+.home_info h3{
+    margin: 1rem 3rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.home_info li{
+    margin: 0 5rem;
+    list-style: circle;
+    text-align: left;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+}
+
+
 @media only screen and (max-width: 720px){
 
 
@@ -68,6 +94,23 @@
         margin-top: 1rem;
         margin-bottom: 3rem;
         font-size: 1.8rem;
+    }
+
+    .home_info p{
+        margin: 2rem 2rem;
+        font-size: 1.3rem;
+    }
+    
+    
+    .home_info h3{
+        margin: 1rem 2rem;
+        font-size: 1.3rem;
+    }
+    
+    .home_info li{
+        margin: 0 2rem;
+        font-size: 1rem;
+        margin-top: 0.5rem;
     }
 
 }
