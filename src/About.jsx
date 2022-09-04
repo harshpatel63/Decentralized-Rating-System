@@ -3,28 +3,48 @@ import "./About.css"
 
 function About() {
   return (
-    <div className='about_parent_container'>
-        <div class="myself">          
-            <h1>HARSH PATEL</h1>
-            <hr class="dots"/>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, laudantium error numquam fugit rem eum illum debitis voluptate, maiores voluptatem nobis corrupti placeat ipsum amet soluta. Voluptas fugit quidem quo.</p>            
-        </div> 
-        <div class="myself">          
-            <h1>ROSHAN KUMAR</h1>
-            <hr class="dots"/>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, laudantium error numquam fugit rem eum illum debitis voluptate, maiores voluptatem nobis corrupti placeat ipsum amet soluta. Voluptas fugit quidem quo.</p>            
-        </div> 
-        <div class="myself">          
-            <h1>BIPIN JADAV</h1>
-            <hr class="dots"/>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, laudantium error numquam fugit rem eum illum debitis voluptate, maiores voluptatem nobis corrupti placeat ipsum amet soluta. Voluptas fugit quidem quo.</p>            
-        </div> 
-        <div class="myself">          
-            <h1>ABHINAV UPADHYAY</h1>
-            <hr class="dots"/>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, laudantium error numquam fugit rem eum illum debitis voluptate, maiores voluptatem nobis corrupti placeat ipsum amet soluta. Voluptas fugit quidem quo.</p>            
-        </div> 
-                    
+    <div>
+        <h1 className='title'>DEVELOPER TEAM</h1>
+        <hr />
+        <div className='about_parent_container'>
+            <div class="myself">          
+                <h1>HARSH PATEL</h1>
+                <hr class="dots"/>
+                <div className='about_member'>
+                <p>4th Year<br/>
+                Computer Science Engineering<br/>
+                National Institute of Technology Goa</p> 
+                </div> 
+            </div> 
+            <div class="myself">          
+                <h1>ROSHAN KUMAR</h1>
+                <hr class="dots"/>
+                <div className='about_member'>
+                <p>4th Year<br/>
+                Computer Science Engineering<br/>
+                National Institute of Technology Goa</p>         
+                </div>   
+            </div> 
+            <div class="myself">          
+                <h1>BIPIN JADAV</h1>
+                <hr class="dots"/>
+                <div className='about_member'>
+                <p>4th Year<br/>
+                Electrical and Electronics Engineering<br/>
+                National Institute of Technology Goa</p>            
+                </div>
+            </div> 
+            <div class="myself">          
+                <h1>ABHINAV UPADHYAY</h1>
+                <hr class="dots"/>
+                <div className='about_member'>
+                <p>4th Year<br/>
+                Mechanical Engineering<br/>
+                National Institute of Technology Goa</p> 
+                </div>           
+            </div> 
+            
+        </div>
     </div>
   )
 }
