@@ -6,6 +6,7 @@ import Hospitals from "./components/Hospitals/Hospitals";
 import HospitalPage from "./components/Hospitals/HospitalPage";
 import Home from "./Home";
 import About from "./About";
+import CreateHospital from "./components/Hospitals/css/CreateHospital";
 
 let hospitalList = [];
 
@@ -16,6 +17,10 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route
+                        path="/createhospital"
+                        element={<CreateHospital />}
+                    />
                     <Route path="/hospitals" element={<Hospitals />} />
                     <Route
                         path="/hospital/:id"
