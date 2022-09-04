@@ -33,8 +33,7 @@ function HospitalPage() {
         let place = count[1];
         let state = count[2];
         let specialization = count[3];
-        // let imageHash = count[4];
-        let imageHash = "https://picsum.photos/200/200";
+        let imageHash = "https://ipfs.io/ipfs/" + count[4];
         let points = count[5];
         let counts = count[6];
         let reviewList = count[7];

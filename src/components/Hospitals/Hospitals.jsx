@@ -23,8 +23,7 @@ function Hospitals() {
             let place = count[i][1];
             let state = count[i][2];
             let specialization = count[i][3];
-            // let imageHash = count[i][4];
-            let imageHash = "https://picsum.photos/200/200";
+            let imageHash = "https://ipfs.io/ipfs/" + count[i][4];
             let points = count[i][5];
             let counts = count[i][6];
             let reviewList = count[i][7];

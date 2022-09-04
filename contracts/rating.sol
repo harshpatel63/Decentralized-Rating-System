@@ -14,6 +14,7 @@ contract RatingContract {
         uint points;
         uint count;
         Rating[] reviewList;
+        uint id;
     }
 
     // maps the hId (Hospital Id) to the Hospital object
@@ -44,11 +45,11 @@ contract RatingContract {
     }
 
     function getHospitalList() public view returns (Hospital[] memory) {
-        Hospital[] memory ret = new Hospital[](hospitalCount);
+        Hospital[] memory ret = new Hospital[](hospitalCount+1);
         for (uint i = 0; i <= hospitalCount; i++) {
             ret[i] = HospitalMap[i];
-            }
-            return ret;
+        }
+        return ret;
     }
 
     // Function for users to give rating for a hospital
@@ -58,12 +59,14 @@ contract RatingContract {
         HospitalMap[hId].reviewList.push(Rating(name,block.timestamp, _star, _review));
     }
 
-    function createHospital(string memory name, string memory place, string memory state, string[] memory specialization) public {
+    function createHospital(string memory name, string memory place, string memory state, string[] memory specialization, string memory imageHash) public {
         hospitalCount++;
         HospitalMap[hospitalCount].name = name;
         HospitalMap[hospitalCount].place = place;
         HospitalMap[hospitalCount].state = state;
         HospitalMap[hospitalCount].specialization = specialization;
+        HospitalMap[hospitalCount].imageHash = imageHash;
+        HospitalMap[hospitalCount].id = hospitalCount;
     }
 
 }

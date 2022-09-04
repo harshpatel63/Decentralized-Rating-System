@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-// import { web3Storage, getFilesFromPath } from "web3.storage";
-
 function CreateHospital() {
     let [hospitaldata, sethospitaldata] = useState({
         name: "",
