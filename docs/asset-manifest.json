@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fa4160aa.chunk.css",
+    "main.js": "/static/js/main.2ace0dd0.chunk.js",
+    "main.js.map": "/static/js/main.2ace0dd0.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7ff607f8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7ff607f8.js.map",
+    "static/js/2.b93a86b1.chunk.js": "/static/js/2.b93a86b1.chunk.js",
+    "static/js/2.b93a86b1.chunk.js.map": "/static/js/2.b93a86b1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.fa4160aa.chunk.css.map": "/static/css/main.fa4160aa.chunk.css.map",
+    "static/js/2.b93a86b1.chunk.js.LICENSE.txt": "/static/js/2.b93a86b1.chunk.js.LICENSE.txt",
+    "static/media/Metamask-logo.8fba4248.jpg": "/static/media/Metamask-logo.8fba4248.jpg",
+    "static/media/Home.css": "/static/media/home_bg.6772c2ec.png",
+    "static/media/meta-basket-icon.4e9f2c01.png": "/static/media/meta-basket-icon.4e9f2c01.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7ff607f8.js",
+    "static/js/2.b93a86b1.chunk.js",
+    "static/css/main.fa4160aa.chunk.css",
+    "static/js/main.2ace0dd0.chunk.js"
+  ]
+}
