@@ -10,14 +10,13 @@ function Header() {
     let [isvisible, setisvisible] = useState(false);
     let navlist = [
         { name: "Home", link: "" },
-        { name: "Products", link: "products" },
+        { name: "Hospitals", link: "hospitals" },
         { name: "About", link: "about" },
     ];
 
     /* ------------------------------- Just blockchain things ------------------------------- */
     useEffect(() => {
         loadBlockchainData();
-        console.log("harshhhhhhhhhhhhhhhhhhhhhhhhhhhhhh");
     }, []);
 
     async function loadBlockchainData() {

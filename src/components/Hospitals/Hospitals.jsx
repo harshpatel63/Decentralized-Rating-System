@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "./css/products.css";
+import "./css/hospitals.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { LoadingSpinner } from "./ProductPage";
+import { LoadingSpinner } from "./HospitalPage";
 
-function Products() {
+function Hospitals() {
     let [hospitals, sethospitals] = useState([]);
 
     /* ------------------------------- Just blockchain things ------------------------------- */
@@ -19,7 +19,6 @@ function Products() {
             .call();
         let hospitallist = [];
         for (let i = 1; i < count.length; i++) {
-            console.log("iiii===>", i);
             let name = count[i][0];
             let place = count[i][1];
             let state = count[i][2];
@@ -51,36 +50,39 @@ function Products() {
     /*---------------------------------------------------------------------------------------*/
 
     return (
-        <div className="products-wrapper">
-            <section className="products">
-                <h1 className="products__main-title">
-                    <b>Products 🛍️ </b>
+        <div className="hospitals-wrapper">
+            <section className="hospitals">
+                <h1 className="hospitals__main-title">
+                    <b style={{ color: "red" }}>
+                        <i class="fa-solid fa-laptop-medical"></i> Hospitals{" "}
+                        <i class="fa-solid fa-laptop-medical"></i>
+                    </b>
                 </h1>
-                <div className="products__products-container">
+                <div className="hospitals__hospitals-container">
                     {hospitals.length === 0
                         ? LoadingSpinner()
-                        : hospitals.map((eachproduct) => {
-                              console.log(eachproduct);
+                        : hospitals.map((eachHospital) => {
+                              console.log(eachHospital);
                               return (
                                   <Link
-                                      key={eachproduct.PID}
-                                      to={"/product/" + eachproduct.id}
+                                      key={eachHospital.PID}
+                                      to={"/hospital/" + eachHospital.id}
                                   >
-                                      <div className="products__products-container__card card">
+                                      <div className="hospitals__hospitals-container__card card">
                                           <img
-                                              src={eachproduct.imageHash}
+                                              src={eachHospital.imageHash}
                                               className="card-img-top"
-                                              alt={eachproduct.Name}
+                                              alt={eachHospital.Name}
                                           />
-                                          <div className="products__products-container__card__card-body card-body">
-                                              <h5>{eachproduct.Name}</h5>
+                                          <div className="hospitals__hospitals-container__card__card-body card-body">
+                                              <h5>{eachHospital.Name}</h5>
                                               <h6>
-                                                  {eachproduct.name},{" "}
-                                                  {eachproduct.place},{" "}
-                                                  {eachproduct.state}
+                                                  {eachHospital.name},{" "}
+                                                  {eachHospital.place},{" "}
+                                                  {eachHospital.state}
                                               </h6>
-                                              <p className="products__products-container__card__card-text card-text">
-                                                  {eachproduct.Details}
+                                              <p className="hospitals__hospitals-container__card__card-text card-text">
+                                                  {eachHospital.Details}
                                               </p>
                                               <button className="btn btn-primary">
                                                   View Details
@@ -96,4 +98,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default Hospitals;

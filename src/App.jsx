@@ -2,12 +2,12 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Products from "./components/Products/Products";
-import ProductPage from "./components/Products/ProductPage";
+import Hospitals from "./components/Hospitals/Hospitals";
+import HospitalPage from "./components/Hospitals/HospitalPage";
 import Home from "./Home";
-import About from "./About"
+import About from "./About";
 
-let productsList = [];
+let hospitalList = [];
 
 function App() {
     return (
@@ -16,10 +16,10 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/products" element={<Products />} />
+                    <Route path="/hospitals" element={<Hospitals />} />
                     <Route
-                        path="/product/:id"
-                        element={<ProductPage productsList={productsList} />}
+                        path="/hospital/:id"
+                        element={<HospitalPage hospitalList={hospitalList} />}
                     />
                     <Route path="/about" element={<About />} />
                 </Routes>

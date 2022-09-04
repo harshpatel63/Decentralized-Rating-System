@@ -15,7 +15,7 @@ function CreateReview(props) {
         review_text: "",
     });
     return (
-        <div className="productdetail__product-review-area__container__content__create-review-box">
+        <div className="hospitaldetail__hospital-review-area__container__content__create-review-box">
             <h4>Add a Review</h4>
             <span>
                 <h5>
@@ -68,7 +68,28 @@ function CreateReview(props) {
 
                             {reviewStatus == SUBMIT_STATUS.RUNNING && (
                                 <>
-                                    <span>Submitting</span>
+                                    <span
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                        }}
+                                    >
+                                        Submitting&nbsp;&nbsp;&nbsp;
+                                        <div
+                                            className="spinner-border"
+                                            role="status"
+                                            style={{
+                                                height: "15px",
+                                                width: "15px",
+                                                fontSize: "10px",
+                                            }}
+                                        >
+                                            <span className="visually-hidden">
+                                                Loading...
+                                            </span>
+                                        </div>
+                                    </span>
                                 </>
                             )}
 

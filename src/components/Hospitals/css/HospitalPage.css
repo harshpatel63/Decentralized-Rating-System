@@ -1,4 +1,4 @@
-.productdetail__back-button {
+.hospitaldetail__back-button {
     width: 50px;
     height: 50px;
     display: flex;
@@ -13,22 +13,22 @@
     position: fixed;
     transition: all 0.2s ease;
 }
-.productdetail__back-button:hover {
+.hospitaldetail__back-button:hover {
     background-color: rgb(221, 221, 221);
 }
-.productdetail__product-detail-area {
+.hospitaldetail__hospital-detail-area {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.productdetail__product-detail-area__container {
+.hospitaldetail__hospital-detail-area__container {
     display: flex;
     width: 100%;
     max-width: 1200px;
     padding: 20px;
 }
-.productdetail__product-detail-area__container__image {
+.hospitaldetail__hospital-detail-area__container__image {
     /* max-width: 500px;/ */
     flex: 0.5;
     padding: 20px;
@@ -36,10 +36,10 @@
     justify-content: center;
     align-items: center;
 }
-.productdetail__product-detail-area__container__image img {
+.hospitaldetail__hospital-detail-area__container__image img {
     width: 100%;
 }
-.productdetail__product-detail-area__container__products-text {
+.hospitaldetail__hospital-detail-area__container__hospitals-text {
     flex: 0.5;
     /* width: 100%; */
     padding: 5rem 3rem;
@@ -48,7 +48,7 @@
     justify-content: space-between;
 }
 
-.productdetail__product-detail-area__container__products-text h3 {
+.hospitaldetail__hospital-detail-area__container__hospitals-text h3 {
     font-family: "Oswald", sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -57,7 +57,7 @@
     line-height: 1.1;
 }
 
-.productdetail__product-detail-area__container__products-text h2 {
+.hospitaldetail__hospital-detail-area__container__hospitals-text h2 {
     font-family: "Roboto", sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -65,7 +65,7 @@
     margin-bottom: 10px;
 }
 
-.productdetail__product-detail-area__container__products-text h2 {
+.hospitaldetail__hospital-detail-area__container__hospitals-text h2 {
     padding-top: 20px;
     border-top: 1px dotted #eeeeee;
     border-bottom: 1px dotted #eeeeee;
@@ -77,10 +77,10 @@
     padding: 10px 20px;
 }
 @media screen and (max-width: 991px) {
-    .productdetail__product-detail-area__container {
+    .hospitaldetail__hospital-detail-area__container {
         flex-direction: column;
     }
-    .productdetail__product-detail-area__container__image {
+    .hospitaldetail__hospital-detail-area__container__image {
         width: 100%;
         padding: 20px 50px;
         max-width: 990px;
@@ -88,27 +88,27 @@
 }
 
 /*---------- Ratings --------*/
-.productdetail__product-review-area {
+.hospitaldetail__hospital-review-area {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.productdetail__product-review-area__container {
+.hospitaldetail__hospital-review-area__container {
     width: 100%;
     max-width: 1200px;
     padding: 20px;
 }
-.productdetail__product-review-area__container__content {
+.hospitaldetail__hospital-review-area__container__content {
     display: flex;
     flex-direction: column;
 }
-.productdetail__product-review-area__container__content__reviews {
+.hospitaldetail__hospital-review-area__container__content__reviews {
     flex: 0.5;
 }
-.productdetail__product-review-area__container__content__create-review-box {
+.hospitaldetail__hospital-review-area__container__content__create-review-box {
     flex: 0.5;
 }
-.productdetail__product-review-area__container__content__reviews__overallreview {
+.hospitaldetail__hospital-review-area__container__content__reviews__overallreview {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -144,11 +144,11 @@
     font-weight: normal;
 }
 
-/* .productdetail__product-review-area__container__content__reviews__all-reviews {
+/* .hospitaldetail__hospital-review-area__container__content__reviews__all-reviews {
     overflow-y: scroll;
   } */
 
-.productdetail__product-review-area__container__content__reviews__all-reviews__review-card {
+.hospitaldetail__hospital-review-area__container__content__reviews__all-reviews__review-card {
     color: #777;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
@@ -195,10 +195,11 @@
 .yellow {
     color: #fbd600;
 }
-.productdetail__product-review-area__container__content__create-review-box {
+.hospitaldetail__hospital-review-area__container__content__create-review-box {
     padding-left: 20px;
 }
-.productdetail__product-review-area__container__content__create-review-box h4 {
+.hospitaldetail__hospital-review-area__container__content__create-review-box
+    h4 {
     font-size: 20px;
     color: #222;
     margin-bottom: 20px;
@@ -207,23 +208,23 @@
     font-weight: 400;
     line-height: 1.3;
 }
-.productdetail__product-review-area__container__content__create-review-box
+.hospitaldetail__hospital-review-area__container__content__create-review-box
     input,
-.productdetail__product-review-area__container__content__create-review-box
+.hospitaldetail__hospital-review-area__container__content__create-review-box
     textarea {
     margin: 10px;
 }
 
 @media screen and (max-width: 900px) {
-    .productdetail__product-review-area__container__content {
+    .hospitaldetail__hospital-review-area__container__content {
         flex-direction: column-reverse;
     }
-    .productdetail__product-review-area__container__content__create-review-box {
+    .hospitaldetail__hospital-review-area__container__content__create-review-box {
         padding: 20px 50px;
     }
 }
 
-.productdetail__loader {
+.hospitaldetail__loader {
     width: 100%;
     display: flex;
     justify-content: center;

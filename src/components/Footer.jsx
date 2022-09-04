@@ -7,11 +7,10 @@ function Footer() {
             <div className="footer__container container">
                 <div className="footer__row row">
                     <div className="col-sm-3 about-div">
-                        <h4 className="title">Meta Basket</h4>
+                        <h4 className="title">Meta Health</h4>
                         <p>
-                            Meta Basket is an online store which has a
-                            Decentralized, Blockchain Based, Secured and Trusted
-                            Rating System.
+                            Meta Health is an online Decentralized, Blockchain
+                            Based, Secured and Trusted Rating System.
                         </p>
                     </div>
 
@@ -31,7 +30,7 @@ function Footer() {
                 </div>
                 <hr />
 
-                <div className="row text-center"> © 2022. Meta Basket</div>
+                <div className="row text-center"> © 2022. Meta Health</div>
             </div>
         </footer>
     );
