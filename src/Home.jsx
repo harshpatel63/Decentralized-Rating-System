@@ -16,7 +16,7 @@ function Home() {
                 <div className="overlay"></div>
             </div>
             <div className="home_info">
-                <p>Our system tries to solve all of this problems in hospital rating and introduces a rating system that is just based on patients' reviews and is decentralized and safe from manipulations.</p>
+                <p>Our system tries to solve the problems in hospital rating and introduces a rating system that is just based on patients' reviews and is decentralized and safe from manipulations.</p>
                 <h3>Why do we require a decentralized rating system ?</h3>
                 <ul>
                     <li>Current rating systems are centralized having complete control over the ratings database.</li>
