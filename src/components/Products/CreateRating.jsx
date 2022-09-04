@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
 
-function CreateRating() {
+let SUBMIT_STATUS = {
+    STOPPED: 0,
+    RUNNING: 1,
+    FINISHED: 2,
+};
+
+function CreateReview(props) {
     let [stars, setStars] = useState(0);
-    let [isreviewWritten, setisreviewWritten] = useState(false);
-    let [reviewWrittenText, setreviewWrittenText] = useState("");
-    let [createRating, setcreateRating] = useState({
+    let [reviewStatus, setreviewStatus] = useState(SUBMIT_STATUS.STOPPED);
+    let [createReview, setCreateReview] = useState({
         name: "",
         review_text: "",
     });
@@ -42,21 +47,39 @@ function CreateRating() {
                         }
                     ></textarea>
                 </div>
-                {!isreviewWritten ? (
+                {
                     <div className="form-group text-center text-md-right mt-3">
                         <button
-                            className={"btn btn-primary"}
-                            onClick={(e) => handleWriteReview(e)}
+                            className={
+                                "btn btn-primary " +
+                                (reviewStatus === SUBMIT_STATUS.FINISHED ||
+                                reviewStatus === SUBMIT_STATUS.RUNNING
+                                    ? "disabled"
+                                    : "")
+                            }
+                            onClick={(e) => handleSubmit(e)}
                         >
-                            <>
-                                <i className="fa-solid fa-pen-nib"></i>
-                                <span> | Write my Review</span>{" "}
-                            </>
+                            {reviewStatus == SUBMIT_STATUS.STOPPED && (
+                                <>
+                                    <i className="fa-solid fa-pen-nib"></i>
+                                    <span> | Write my Review</span>
+                                </>
+                            )}
+
+                            {reviewStatus == SUBMIT_STATUS.RUNNING && (
+                                <>
+                                    <span>Submitting</span>
+                                </>
+                            )}
+
+                            {reviewStatus == SUBMIT_STATUS.FINISHED && (
+                                <>
+                                    <span>Review Submitted</span>
+                                </>
+                            )}
                         </button>
                     </div>
-                ) : (
-                    "Review Posted"
-                )}
+                }
             </form>
         </div>
     );
@@ -80,38 +103,57 @@ function CreateRating() {
     function handleInput(value, type) {
         switch (type) {
             case "name":
-                setcreateRating({
-                    ...createRating,
+                setCreateReview({
+                    ...createReview,
                     name: value,
                 });
                 break;
             case "review-text":
-                setcreateRating({
-                    ...createRating,
+                setCreateReview({
+                    ...createReview,
                     review_text: value,
                 });
                 break;
         }
     }
 
-    async function handleWriteReview(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
+        if (checkForm() == false) return;
+
+        setreviewStatus(SUBMIT_STATUS.RUNNING);
+
         try {
-            await this.state.ratingContract.methods
+            await window.ratingContract.methods
                 .createRating(
-                    this.state.productid,
-                    this.state.createrating.name,
-                    this.state.createrating.star,
-                    this.state.createrating.review_text
+                    props.hospital_id,
+                    createReview.name,
+                    stars,
+                    createReview.review_text
                 )
                 .send({
-                    from: this.state.account,
+                    from: window.MetaMaskAccount,
                 });
         } catch (e) {
-            this.setState({ reviewWrittenText: "Some Error, Try Again" });
+            alert(e.message + " Please Try again..");
+            setreviewStatus(SUBMIT_STATUS.STOPPED);
+            return;
         }
-        this.setState({ isreviewWritten: true });
+        setreviewStatus(SUBMIT_STATUS.FINISHED);
+    }
+    function checkForm() {
+        if (createReview.name === "") {
+            alert("Please Enter your name");
+            return false;
+        } else if (createReview.review_text === "") {
+            alert("No review entered");
+            return false;
+        } else if (stars === 0) {
+            alert("Select Stars");
+            return false;
+        }
+        return true;
     }
 }
 
-export default CreateRating;
+export default CreateReview;

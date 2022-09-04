@@ -29,6 +29,7 @@ function ReviewFetch(props) {
                               key={temptestReviewList.findIndex(
                                   (x) => x == eachreview
                               )}
+                              id="review-area"
                               className="productdetail__product-review-area__container__content__reviews__all-reviews__review-card"
                           >
                               <div className="review-card__name_details">

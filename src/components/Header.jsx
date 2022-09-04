@@ -30,6 +30,7 @@ function Header() {
             return;
         }
 
+        window.MetaMaskAccount = accounts[0];
         window.ratingContract = new web3.eth.Contract(ratingAbi, ratingAddress);
         console.log(window.ratingContract);
         const count = await window.ratingContract.methods.getCount(1).call();

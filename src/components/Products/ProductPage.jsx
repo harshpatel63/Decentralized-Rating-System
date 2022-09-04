@@ -81,9 +81,12 @@ function ProductPage() {
                             </h3>
                         </div>
                         <div className="productdetail__product-detail-area__container__products-text__buy-btn">
-                            <button className="btn btn-warning buy-button">
+                            <a
+                                className="btn btn-warning buy-button"
+                                href="#review-area"
+                            >
                                 <i class="fa-solid fa-eye"></i> See Reviews
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +112,7 @@ function ProductPage() {
                         </div>
                         <ReviewFetch reviewList={currenthospital.reviewList} />
                     </div>
-                    <CreateRating />
+                    <CreateRating hospital_id={id} />
                 </div>
             </section>
         </>
