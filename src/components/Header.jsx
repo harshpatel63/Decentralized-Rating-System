@@ -11,6 +11,7 @@ function Header() {
     let navlist = [
         { name: "Home", link: "" },
         { name: "Hospitals", link: "hospitals" },
+        { name: "Create Hospital", link: "createhospital" },
         { name: "About", link: "about" },
     ];
 
